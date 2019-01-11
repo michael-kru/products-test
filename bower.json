@@ -1,0 +1,6 @@
+{
+  "name": "product-form-list",
+  "dependencies": {
+    "materialize": "0.97.6"
+  }
+}

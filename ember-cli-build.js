@@ -1,10 +1,20 @@
 'use strict';
 
+const nodeSass = require('node-sass');
+
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+  sassOptions: {
+      includePaths: [
+        'node_modules/materialize-css/sass',
+        'node_modules/'
+      ],
+      nodeSass: nodeSass // Workaround for ember-cli-sass bug https://github.com/aexmachina/ember-cli-sass/issues/117
+    },
+
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -20,5 +30,8 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('node_modules/materialize-css/dist/js/materialize.min.js');
+
   return app.toTree();
 };
+

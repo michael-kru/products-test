@@ -1,0 +1,73 @@
+<div class="container">
+<div class="row">
+<div class="col s12 center-align">
+<form>
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>
+    <label>ID:</label>
+     {{input placeholder = "Please type id" value=newCategoryId autofocus="autofocus"}}
+    </th>
+   <th>
+      <label>HOMEPAGE:</label>
+      <br> {{input placeholder = "Please type homepage" value=newCategoryHomepage}}
+    </th>
+    <th>
+     <label>DESCRIPTION:</label>
+    {{input placeholder = "Please type description" value=newCategoryDescription }}
+      <br>
+    </th>
+    <td> 
+    <button type="submit" class="btn" disabled={{isDisabled}} {{action 'addNewCategory' newCategoryId newCategoryHomepage newCategoryDescription}}>ADD DATA</button>
+    </td>
+    <td>
+    <input type="button" name="clear_form" class ="btn a pink lighten-1" value="Reset Form" onclick="this.form.reset();">
+    </td>
+  </tr>
+ </thead>
+</table> 
+</form>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<table class="striped highlight centered responsive-table">
+        <thead>
+          <tr>
+         <th>ID
+         </th>
+         <th>NAME
+         </th>
+         <th>DESCRIPTION</th>
+          </tr>
+        </thead>
+    <tbody>
+  {{#each model as |category|}}
+  <tr>
+     <td>{{category.id}}</td>
+     <td>{{category.homepage}}</td>
+     <td>{{category.description}} </td>
+   <tr>
+      <td>
+    <button class="btn btn-xs a pink lighten-1" {{action 'deleteCategory' category}}>Delete</button>
+        </td>
+   </tr>
+   </tr>
+    {{/each}}
+    </tbody>
+ </table>
+ </div>
+ </div>
+
+<div class="container">
+ <div class="row">
+  <div class="col s8 offset-s4 left-align">
+    <blockquote>Number of categories: {{model.length}} </blockquote>
+  </div>
+ </div>
+</div>
+
+{{outlet}}

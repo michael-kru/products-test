@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#md-navbar name='Web' class='blue darken-3'}}
+  {{#link-to "index" tagName='li'}}
+    {{link-to "Customer Page" "index"}}
+  {{/link-to}}
+  {{#link-to "products" tagName='li'}}
+    {{link-to "Products Page" "products"}}
+  {{/link-to}}
+{{/md-navbar}}
+
+
+<hr>
 
 {{outlet}}
+
