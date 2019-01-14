@@ -5,21 +5,17 @@
 <table class="table table-bordered table-striped">
   <thead>
   <tr>
-    <th>
-    <label>ID:</label>
-     {{input placeholder = "Please type id" value=newCategoryId autofocus="autofocus"}}
-    </th>
    <th>
-      <label>HOMEPAGE:</label>
+      <label>Homepage:</label>
       <br> {{input placeholder = "Please type homepage" value=newCategoryHomepage}}
     </th>
     <th>
-     <label>DESCRIPTION:</label>
+     <label>Description:</label>
     {{input placeholder = "Please type description" value=newCategoryDescription }}
-      <br>
+  
     </th>
     <td> 
-    <button type="submit" class="btn" disabled={{isDisabled}} {{action 'addNewCategory' newCategoryId newCategoryHomepage newCategoryDescription}}>ADD DATA</button>
+    <button type="submit" class="btn" disabled={{isDisabled}} {{action 'addNewCategory' newCategoryHomepage newCategoryDescription}}>Add Data</button>
     </td>
     <td>
     <input type="button" name="clear_form" class ="btn a pink lighten-1" value="Reset Form" onclick="this.form.reset();">
@@ -37,17 +33,14 @@
 <table class="striped highlight centered responsive-table">
         <thead>
           <tr>
-         <th>ID
+         <th>Name
          </th>
-         <th>NAME
-         </th>
-         <th>DESCRIPTION</th>
+         <th>Description</th>
           </tr>
         </thead>
     <tbody>
   {{#each model as |category|}}
   <tr>
-     <td>{{category.id}}</td>
      <td>{{category.homepage}}</td>
      <td>{{category.description}} </td>
    <tr>

@@ -4,6 +4,11 @@
 	display:none;
 }
 
+.btn{
+	
+	border-radius: 5px;
+}
+
 .btn a {
 	color: white;
 }
@@ -17,4 +22,13 @@
 
 blockquote {
 	font-weight: bold;
+}
+
+label {
+	text-transform: uppercase;
+}
+
+th {
+	
+	text-transform: uppercase;
 }
